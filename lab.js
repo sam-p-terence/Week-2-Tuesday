@@ -7,8 +7,8 @@
 //Code here
 
 const me = {
-  name = 'Terence',
-  age = '100'
+  name: 'Terence',
+  age: '100',
 }
 
 //////////////////////////// PROBLEM 2 ////////////////////////////
@@ -21,10 +21,10 @@ const me = {
 //Code here
 
 const dog = {
-  name = 'Milo',
-  color = 'Brown',
-  age = '10',
-  Boolean.goodBoy = True
+  name: 'Milo',
+  color: 'Brown',
+  age: '10',
+  goodBoy: true,
 }
 
 let dogAge = dog.age
@@ -33,7 +33,8 @@ let dogAge = dog.age
 /* Print out the name of the dog you created in problem 2 using dot-notation. */
 
 //Code here
-
+dog.name
+console.log(dog.name)
 
 
 //////////////////////////// PROBLEM 4 ////////////////////////////
@@ -41,7 +42,9 @@ let dogAge = dog.age
 
 //Code here
 
-
+// dog.['name']
+// console.log(dog.name)
+console.log(dog["color"])
 
 //////////////////////////// PROBLEM 5 ////////////////////////////
 /*
@@ -51,6 +54,15 @@ let dogAge = dog.age
 
 //Code here
 
+const favoriteThings = {
+  band: 'RadioHead',
+  food: 'Ramen',
+  person: 'Mom',
+  book: 'The Hitchhikers Guide to  the Galaxy',
+  movie: 'Interstellar',
+  holiday: 'Thanksgiving',
+}
+
 
 /*
   After you've made your object, use bracket or dot notation to add another key named 'car' with the value being your favorite car and then another key named 'show' with the value being your favorite show.
@@ -58,6 +70,7 @@ let dogAge = dog.age
 
 //Code here
 
+favoriteThings.car = 'Tesla'
 
 /*
   Now use bracket or dot notation to change the value of the food key in your favoriteThings object to be 'Chicken Nuggets'
@@ -66,6 +79,9 @@ let dogAge = dog.age
 
 //Code here
 
+favoriteThings.food = "Chicken Nuggets"
+favoriteThings['book'] = 'Harry Potter'
+console.log(favoriteThings)
 
 //////////////////////////// PROBLEM 6 ////////////////////////////
 
@@ -84,6 +100,8 @@ var carDetails = {
 
 //Code Here
 
+let {color, make, model, year} = carDetails
+console.log(`I have a ${color} maker ${make} and model ${model} built in ${year}`)
 
 
 //////////////////////////// PROBLEM 7 ////////////////////////////
