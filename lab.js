@@ -8,7 +8,7 @@
 
 const me = {
   name: 'Terence',
-  age: '100',
+  age: 42,
 }
 
 //////////////////////////// PROBLEM 2 ////////////////////////////
@@ -27,14 +27,13 @@ const dog = {
   goodBoy: true,
 }
 
-let dogAge = dog.age
-
 //////////////////////////// PROBLEM 3 ////////////////////////////
 /* Print out the name of the dog you created in problem 2 using dot-notation. */
 
 //Code here
 dog.name
-console.log(dog.name)
+let dogName = dog.name
+console.log(dogName)
 
 
 //////////////////////////// PROBLEM 4 ////////////////////////////
@@ -58,7 +57,7 @@ const favoriteThings = {
   band: 'RadioHead',
   food: 'Ramen',
   person: 'Mom',
-  book: 'The Hitchhikers Guide to  the Galaxy',
+  book: 'The Hitchhikers Guide to the Galaxy',
   movie: 'Interstellar',
   holiday: 'Thanksgiving',
 }
@@ -112,13 +111,26 @@ console.log(`I have a ${color} maker ${make} and model ${model} built in ${year}
   The property names are firstName, lastName, and title.
 */
 
+
 function greeting( obj ) {
+
   //Code Here
+
+  let {firstName} = obj
+  let {lastName, title} = obj;
   
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
 }
+
+const object2 = {
+  firstName: 'Terence',
+  lastName: 'Sam',
+  title: 'Student',
+}
+
+console.log(greeting(object2))
 
 
 
@@ -133,7 +145,19 @@ function greeting( obj ) {
 */
 
 //Code Here
+const stateRates = {
+  utah: 1,
+  california: 0,
+  texas: 99,
+  arizona: 3,
 
+}
+
+function totalPopulation(obj) {
+  let {utah, california, texas, arizona} = obj
+  return (utah + california + texas + arizona)
+} 
+console.log(totalPopulation(stateRates))
 
 
 //////////////////////////// PROBLEM 9 ////////////////////////////
@@ -148,7 +172,22 @@ function greeting( obj ) {
 
 //Code Here
 
+const ingredients = {
+  carb: "Way too much",
+  fat: "Not enough",
+  protein: "Just about right",
+}
 
+function macros (obj) {
+  let {carb, fat, protein} = obj
+  let array = [];
+  array.push(carb);
+  array.push(fat);
+  array.push(protein);
+  return array
+}
+
+console.log(macros(ingredients))
 
 //////////////////////////// PROBLEM 10 ////////////////////////////
 // Do not edit the code below.
@@ -170,7 +209,8 @@ var user = {
 
 //Code Here
 
-
+user.name = "Bryan G. Smith"
+user.email = "bryan.smith@devmountain"
 //////////////////////////// PROBLEM 11 ////////////////////////////
 /*
   Using the user object above, delete the users age off of the object.
@@ -178,6 +218,7 @@ var user = {
 
 //Code Here
 
+delete user.age
 
 //////////////////////////// PROBLEM 12 ////////////////////////////
 /*
@@ -188,7 +229,18 @@ var user = {
 
 //Code here
 
+class Cat
+{
+  constructor (name, age, color)
+  {
+    this.name = name,
+    this.age = age,
+    this.color = color
+  }
+}
 
+let newCat = new Cat('tiki', 2, 'blue');
+console.log(newCat.name);
 
 //////////////////////////// PROBLEM 13 ////////////////////////////
 /*
@@ -200,6 +252,20 @@ var user = {
 
 //Code here
 
+class Wizard {
+  constructor (name, age, favoriteSpell) {
+    this.name = name
+    this.age = age
+    this.favoriteSpell = favoriteSpell
+  }
+
+  castSpell() {
+    console.log(this.name + ' has cast his favorite spell')
+
+  }
+}
+let Wiz1 = new Wizard('Gandalf', 10000, "Casting it into thefire")
+Wiz1.castSpell();
 //////////////////////////// PROBLEM 14 ////////////////////////////
 /*
     Write a class called Phone. We'll use it as if we were creating
@@ -209,7 +275,7 @@ var user = {
 
     Write a constructor that sets those values -- all of the values 
     should come from the constructors parameters except sold, which
-    should always be set to false. We want that to be false since 
+    should always be set to false. We want that to be false since d
     when we create a new phone, we're putting it in our inventory
     and it won't be sold yet. 
 
@@ -225,6 +291,24 @@ var user = {
 
 //Code Here
 
+class Phone {
+  constructor(brand, model, storage, color, price) {
+    this.brand = brand
+    this.model = model
+    this.storage = storage
+    this.color = color
+    this.price = price
+    this.sold = false
+  }
+  sell() {
+    this.sold = true
+    console.log(`and ${model} has been sold`)
+  }
+  changePrice(newPrice) {
+    this.price = newPrice
+    console.log(this.price)
+  }
+}
   
 /*
     Next make three new phone instances using your class.
@@ -237,6 +321,29 @@ var user = {
 */
 
 //Code Here
+let iPhone13 = new Phone(
+  'Apple',
+  'iPhone 13',
+  128,
+  'white',
+  500
+)
+
+let S22 = new Phone(
+  'Samsung',
+  'S22',
+  256,
+  'black',
+  400
+)
+
+let Pixel = new Phone(
+  'Google',
+  'Pixel 6',
+  512,
+  'gray',
+  600
+)
 
 /* 
   Call the changePrice function on one of your phones, 
@@ -245,7 +352,13 @@ var user = {
   Then console.log that object to see the price change
 */ 
 
-//Code Here 
+Pixel.changePrice(120)
+S22.changePrice(300)
+iPhone13.changePrice(1000)
+
+console.log(iPhone13)
+iPhone13.sell()
+console.log(iPhone13)
 
 
 /*
@@ -320,6 +433,17 @@ const shippingInfo = {
 */
 
 //Code Here 
+class Vehicle = {
+  constructor(capacity, color, mileage) {
+    this.capacity = capacity
+    this.color = color
+    this.mileage = mileage
+  }
+  move(miles) {
+    this.miles+=miles
+    console.log(this.miles)
+  }
+}
 
 
 /*
@@ -327,7 +451,7 @@ const shippingInfo = {
 */
 
 //Code Here
-
+myFirstVehicle = new Vehicle(5, 'red', 30000)
 
 /* 
   Now we'll create a class that's based off of the vehicle class. 
@@ -339,15 +463,28 @@ const shippingInfo = {
 
 //Code Here
 
+class Motorcycle extends Vehicle {
+  constructor(capacity, color, mileage, make, isCool) {
+    super(capacity, color, mileage)
+    this.make = make
+    this.isCool = isCool
+  }
+}
+
 /*
   Create a Motorcycle using your new class and save it to a variable called myFirstMotorcycle
 */
 
 //Code Here 
 
+let myFirstMotorcycle = new Motorcycle(2, 'black', 20000, 'Yamaha 2000', true)
+
 /*
   Call the move function on myFirstMotorcycle (don't forget the parameter)
 */
+
+myFirstMotorcycle.move(500)
+console.log(myFirstMotorcycle)
 
 /*
   Let's make another class based off of Vehicle. 
